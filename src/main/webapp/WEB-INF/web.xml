@@ -32,4 +32,48 @@
     <url-pattern>/update.do</url-pattern>
   </servlet-mapping>
 
+
+
+  <servlet>
+    <servlet-name>AuthorServlet</servlet-name>
+    <servlet-class>ru.job4j.servlet.AuthorServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AuthorServlet</servlet-name>
+    <url-pattern>/author.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RegServlet</servlet-name>
+    <servlet-class>ru.job4j.servlet.RegServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>RegServlet</servlet-name>
+    <url-pattern>/reg.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>ru.job4j.servlet.LogoutServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout.do</url-pattern>
+  </servlet-mapping>
+
+
+  <filter>
+    <filter-name>AuthFilter</filter-name>
+    <filter-class>ru.job4j.filter.AuthFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>AuthFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+
 </web-app>

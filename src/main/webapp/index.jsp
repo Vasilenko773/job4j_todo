@@ -31,8 +31,17 @@
         );
     </script>
 
+<c:if test="${sessionScope.user == null}">
+    <li class="nav-item">
+        <a class="nav-link" href="<%=request.getContextPath()%>/login.jsp"><c:out value="${item.user.name}"/> || Войти</a>
+    </li>
+</c:if>
 
-
+    <c:if test="${user != null}">
+        <li class="nav-item">
+            <a class="nav-link" href="<%=request.getContextPath()%>/logout.do">Выйти</a>
+        </li>
+    </c:if>
     <form>
         <div class="form-group">
             <label>Добавить новое задание</label>
@@ -61,6 +70,7 @@
         <th>Description</th>
         <th>Created</th>
         <th>Done</th>
+        <th>User</th>
     </tr>
     </thead>
     <tbody id="tableBody">

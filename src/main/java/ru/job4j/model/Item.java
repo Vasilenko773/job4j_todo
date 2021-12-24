@@ -18,6 +18,10 @@ public class Item {
 
     private boolean done;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     public Item(String description) {
         this.description = description;
     }
@@ -33,6 +37,14 @@ public class Item {
         this.description = description;
         this.created = created;
         this.done = done;
+    }
+
+    public Item(int id, String description, Timestamp created, boolean done, User user) {
+        this.id = id;
+        this.description = description;
+        this.created = created;
+        this.done = done;
+        this.user = user;
     }
 
     public Item() {
@@ -68,6 +80,16 @@ public class Item {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override

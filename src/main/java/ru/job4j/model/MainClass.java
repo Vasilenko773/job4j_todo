@@ -6,9 +6,7 @@ public class MainClass {
 
     public static void main(String[] args) {
 
-        Item item = HibernateUtil.instOf().findById(1);
-        System.out.println(item);
-        HibernateUtil.instOf().update(1);
-        System.out.println(item);
+        System.out.println(HibernateUtil.instOf().findById(1).getUser().getName());
+
     }
 }

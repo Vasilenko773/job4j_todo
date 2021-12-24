@@ -1,6 +1,7 @@
 package ru.job4j.store;
 
 import ru.job4j.model.Item;
+import ru.job4j.model.User;
 
 import java.util.List;
 
@@ -17,5 +18,11 @@ public interface Store {
     Item findByDescription(String description);
 
     List<Item> findByDone();
+
+    User findByNameUser(String name);
+
+    List<User> findAllUser();
+
+    User saveUser(User user);
 }
 

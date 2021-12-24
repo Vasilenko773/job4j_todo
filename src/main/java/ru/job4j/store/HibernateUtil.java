@@ -7,6 +7,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import ru.job4j.model.Item;
+import ru.job4j.model.User;
 
 import java.util.List;
 import java.util.function.Function;
@@ -64,6 +65,23 @@ public class HibernateUtil implements Store {
     public List<Item> findByDone() {
         return this.tx(session -> session.createQuery("from ru.job4j.model.Item where done = :done")
                 .setParameter("done", false).list());
+    }
+
+    @Override
+    public User findByNameUser(String name) {
+        return this.tx(session -> (User) session.createQuery("from User where name = :name")
+                .setParameter("name", name).uniqueResult());
+    }
+
+    @Override
+    public List<User> findAllUser() {
+        return this.tx(session -> session.createQuery("from ru.job4j.model.User").list());
+
+    }
+
+    @Override
+    public User saveUser(User user) {
+        return (User) this.tx(session -> session.save(user));
     }
 
     private <T> T tx(final Function<Session, T> command) {
