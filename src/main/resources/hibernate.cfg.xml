@@ -22,5 +22,7 @@
 
         <mapping class="ru.job4j.communications.model.CarMark" />
         <mapping class="ru.job4j.communications.model.CarModel" />
+        <mapping class="ru.job4j.communications.model.Author" />
+        <mapping class="ru.job4j.communications.model.Book" />
     </session-factory>
 </hibernate-configuration>
