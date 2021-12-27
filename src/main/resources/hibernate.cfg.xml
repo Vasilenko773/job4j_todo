@@ -20,6 +20,8 @@
         <mapping class="ru.job4j.model.Item" />
         <mapping class="ru.job4j.model.User" />
 
+        <mapping class="ru.job4j.communications.model.Model" />
+        <mapping class="ru.job4j.communications.model.Mark" />
         <mapping class="ru.job4j.communications.model.CarMark" />
         <mapping class="ru.job4j.communications.model.CarModel" />
         <mapping class="ru.job4j.communications.model.Author" />
